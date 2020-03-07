@@ -19,13 +19,13 @@
     background-color: lightcoral;
 }
 
-.register {
+.login {
     margin: 1rem;
     font-size: 2rem;
     border: 2px solid lightcoral;
 }
 
-.register h3 {
+.login h3 {
     margin: 1rem;
 }
 
@@ -41,12 +41,12 @@
     border: 2px solid black;
 }
 
-.register-btn {
+.login-btn {
     border-radius: .4rem;
     padding: .2rem;
 }
 
-.back-btn {
-    border-radius: .4rem;
-    padding: .2rem;
+.options {
+    margin: 1rem;
 }
+
