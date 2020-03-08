@@ -23,7 +23,7 @@ gen
 ### Java template
 # Compiled class file
 *.class
-**Config.java
+src/main/java/dao/Config.java
 
 # Log file
 *.log

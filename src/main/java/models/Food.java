@@ -18,6 +18,13 @@ public class Food {
         this.userId = userId;
     }
 
+    public Food(String name, double price, String imgUrl, int userId) {
+        this.name = name;
+        this.price = price;
+        this.imgUrl = imgUrl;
+        this.userId = userId;
+    }
+
     public int getId() {
         return this.id;
     }

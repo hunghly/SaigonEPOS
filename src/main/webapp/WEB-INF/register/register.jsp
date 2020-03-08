@@ -14,8 +14,10 @@
 <section class="heading">
     <h1>Registration Form</h1>
 </section>
-
 <section class="register">
+    <c:if test="${sessionScope.regDuplicate}">
+        <h3 style="color: red">You entered a username or email that is already taken.</h3>
+    </c:if>
     <h3>Please provide your details to register for an account:</h3>
     <form action="/register" method="POST" class="register-form">
         <div class="input-container">
@@ -33,9 +35,10 @@
         <div class="input-container">
             <label for="password-confirm">Confirm Password: </label>
             <input type="password" name="password-confirm" id="password-confirm" required>
+            <span class="match-flag invisible">*Passwords must match</span>
         </div>
         <div class="input-container">
-            <button type="submit" class="register-btn">Register</button>
+            <button type="submit" class="register-btn" disabled>Register</button>
         </div>
     </form>
 

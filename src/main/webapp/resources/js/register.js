@@ -1,22 +1,20 @@
-const Register = (()=> {
+(()=> {
     const listeners = () => {
         const passwordEl = document.querySelector("#password");
         const confirmPasswordEl = document.querySelector("#password-confirm");
+        const matchFlagEl = document.querySelector(".match-flag");
+        const registerBtnEl = document.querySelector(".register-btn");
+
         confirmPasswordEl.addEventListener("keyup", function() {
-            console.log({passwordEl});
-            console.log(passwordEl.getAttributeNames());
-            console.log(passwordEl.attributes);
             if(passwordEl.value === confirmPasswordEl.value) {
-                console.log("equal");
+                matchFlagEl.classList.add("invisible");
+                registerBtnEl.removeAttribute("disabled");
             } else {
-                console.log("not equal");
+                matchFlagEl.classList.remove("invisible");
+                registerBtnEl.setAttribute("disabled", "true");
             }
         })
     };
 
-    return {
-        listeners
-    }
+    listeners();
 })();
-
-Register.listeners();

@@ -13,6 +13,11 @@ public class Modifier {
         this.priceMod = priceMod;
     }
 
+    public Modifier (String modifer, double priceMod) {
+        this.modifer = modifer;
+        this.priceMod = priceMod;
+    }
+
     public int getId() {
         return this.id;
     }
