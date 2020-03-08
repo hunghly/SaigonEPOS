@@ -8,17 +8,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
-    <link rel="stylesheet" href="/resources/css/register.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/register.css">
 </head>
 <body>
-
-
 <section class="heading">
     <h1>Registration Form</h1>
 </section>
 
 <section class="register">
-    <h3>Please provide your details to register for an account..</h3>
+    <h3>Please provide your details to register for an account:</h3>
     <form action="/register" method="POST" class="register-form">
         <div class="input-container">
             <label for="username">Username: </label>
@@ -44,6 +42,8 @@
     <div class="input-container">
         <button type="submit" class="back-btn"><a href="/index">Back</a></button>
     </div>
+
+    <script src="${pageContext.request.contextPath}/resources/js/register.js"></script>
 </section>
 </body>
 </html>

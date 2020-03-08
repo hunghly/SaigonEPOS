@@ -46,6 +46,10 @@
     padding: .2rem;
 }
 
+.login-btn:hover {
+    cursor: pointer;
+}
+
 .options {
     margin: 1rem;
 }
