@@ -2,6 +2,8 @@ package controllers;
 
 import dao.DaoFactory;
 import dao.Users;
+import models.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,6 +40,9 @@ public class RegisterServlet extends HttpServlet {
                 request.getRequestDispatcher("/WEB-INF/register/register.jsp").forward(request, response);
                 return;
             }
+            String hash = BCrypt.hashpw(password, BCrypt.gensalt());
+            userSQLDao.insert(new User(username, hash, email));
+            request.getRequestDispatcher("/index").forward(request, response);
         } catch (SQLException | IOException | ServletException e) {
             e.printStackTrace();
         }
