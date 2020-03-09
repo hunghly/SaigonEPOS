@@ -17,6 +17,9 @@
 </section>
 
 <section class="login">
+    <c:if test="${sessionScope.invalid}">
+        <h3 style="color: red">Account credentials are invalid.</h3>
+    </c:if>
     <h3>Please log in to continue</h3>
     <form action="/index" method="POST" class="login-form">
         <div class="input-container">

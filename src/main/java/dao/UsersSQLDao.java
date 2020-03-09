@@ -45,7 +45,7 @@ public class UsersSQLDao implements Users{
             stmt.setString(1, username);
             stmt.executeQuery();
             ResultSet rs = stmt.getResultSet();
-            if (! rs.next()) {
+            if (!rs.next()) {
                 return null;
             }
             return new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));

@@ -10,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -19,9 +18,6 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-//        if (request.getSession().getAttribute("regDup") != null) {
-//
-//        }
         request.getRequestDispatcher("/WEB-INF/register/register.jsp").forward(request, response);
     }
 
@@ -30,9 +26,9 @@ public class RegisterServlet extends HttpServlet {
         String username = (String) request.getParameter("username");
         String email = (String) request.getParameter("email");
         String password = (String) request.getParameter("password");
-        System.out.println(username);
-        System.out.println(email);
-        System.out.println(password);
+//        System.out.println(username);
+//        System.out.println(email);
+//        System.out.println(password);
         try {
             Users userSQLDao = DaoFactory.getUsersSQLDao();
             if (userSQLDao.findUser(username) != null) {
