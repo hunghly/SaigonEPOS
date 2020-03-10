@@ -13,12 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(urlPatterns = "/index")
+@WebServlet(urlPatterns = {"/", "/index"})
 public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getSession().removeAttribute("regDuplicate");
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
@@ -30,17 +29,15 @@ public class IndexServlet extends HttpServlet {
         try {
             Users user = DaoFactory.getUsersSQLDao();
             User foundUser = user.findUser(username);
-            if (foundUser == null) {
-                // need to add check to see if user's password does not equal
-                request.getSession().setAttribute("invalid", true);
-                request.getRequestDispatcher("/index").forward(request,response);
-                return;
+            if (foundUser != null) {
+                if (BCrypt.checkpw(password, foundUser.getPassword())) {
+                    response.sendRedirect("/home");
+                    return;
+                }
             }
-            if (BCrypt.checkpw(password, foundUser.getPassword())) {
-                request.getRequestDispatcher("/");
-                return;
-            }
-        } catch (SQLException | ServletException e) {
+            request.getSession().setAttribute("invalid", true);
+            response.sendRedirect("/index");
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

@@ -10,7 +10,20 @@
     <title>Homepage</title>
 </head>
 <body>
-
+<h1>Welcome to Saigon Electronic Point of Sale</h1>
+<ul>
+    <li>
+        Edit Foods
+        <ul>
+            <li><a href="/food/create">Create</a></li>
+            <li>Update</li>
+            <li>Delete</li>
+        </ul>
+    </li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 
 
 

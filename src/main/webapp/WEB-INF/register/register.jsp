@@ -15,9 +15,7 @@
     <h1>Registration Form</h1>
 </section>
 <section class="register">
-    <c:if test="${sessionScope.regDuplicate}">
-        <h3 style="color: red">You entered a username or email that is already taken.</h3>
-    </c:if>
+    <jsp:include page="../partials/errorMsg.jsp"/>
     <h3>Please provide your details to register for an account:</h3>
     <form action="/register" method="POST" class="register-form">
         <div class="input-container">

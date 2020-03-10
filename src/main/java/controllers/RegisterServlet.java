@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/register")
+@WebServlet(urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
 
     @Override
@@ -23,12 +23,9 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        String username = (String) request.getParameter("username");
-        String email = (String) request.getParameter("email");
-        String password = (String) request.getParameter("password");
-//        System.out.println(username);
-//        System.out.println(email);
-//        System.out.println(password);
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
         try {
             Users userSQLDao = DaoFactory.getUsersSQLDao();
             if (userSQLDao.findUser(username) != null) {
