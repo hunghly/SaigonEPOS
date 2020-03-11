@@ -25,6 +25,12 @@ public class Food {
         this.userId = userId;
     }
 
+    public Food(String name, double price, int userId) {
+        this.name = name;
+        this.price = price;
+        this.userId = userId;
+    }
+
     public int getId() {
         return this.id;
     }

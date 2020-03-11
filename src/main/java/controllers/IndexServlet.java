@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(urlPatterns = {"/", "/index"})
+@WebServlet(urlPatterns = "/index")
 public class IndexServlet extends HttpServlet {
 
     @Override
@@ -31,6 +31,8 @@ public class IndexServlet extends HttpServlet {
             User foundUser = user.findUser(username);
             if (foundUser != null) {
                 if (BCrypt.checkpw(password, foundUser.getPassword())) {
+//                    request.getRequestDispatcher("/home").forward(request, response);
+                    request.getSession().setAttribute("user", foundUser);
                     response.sendRedirect("/home");
                     return;
                 }

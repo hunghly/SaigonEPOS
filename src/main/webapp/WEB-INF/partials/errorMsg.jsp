@@ -8,3 +8,8 @@
     <h3 style="color: red">You entered a username or email that is already taken.</h3>
     <% request.getSession().removeAttribute("regDuplicate"); %>
 </c:if>
+
+<c:if test="${sessionScope.foodCreated}">
+    <h3 style="color: red">Food successfully created.</h3>
+    <% request.getSession().removeAttribute("foodCreated"); %>
+</c:if>

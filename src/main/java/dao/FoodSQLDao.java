@@ -33,7 +33,9 @@ public class FoodSQLDao implements Foods {
         stmt.setInt(4, food.getUserId());
         stmt.executeUpdate();
         ResultSet rs = stmt.getGeneratedKeys();
-        rs.next();
+        if (!rs.next()) {
+            return 0;
+        }
         return rs.getInt(1);
     }
 

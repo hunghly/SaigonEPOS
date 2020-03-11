@@ -22,9 +22,8 @@
     </li>
     <li></li>
     <li></li>
-    <li></li>
+    <li>Log Out</li>
 </ul>
-
 
 
 </body>

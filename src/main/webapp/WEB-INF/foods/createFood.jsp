@@ -25,17 +25,25 @@
         </div>
         <div class="input-container">
             <label for="price">Price: </label>
-            <input type="number" name="price" id="price" required>
+            <input type="text" name="price" id="price" required>
         </div>
         <div class="input-container">
             <button type="submit" class="create-food-btn">Create</button>
         </div>
     </form>
+    <div class="input-container">
+        <button type="button" class="back-btn"><a href="/home">Back</a></button>
+    </div>
 
-    <form method="post" action="multiPartServlet" enctype="multipart/form-data">
-        Choose a file: <input type="file" name="multiPartServlet" />
-        <input type="submit" value="Upload" />
-    </form>
+<%--    <form method="post" action="multiPartServlet" enctype="multipart/form-data">--%>
+<%--        Choose a file: <input type="file" name="multiPartServlet" />--%>
+<%--        <input type="submit" value="Upload" />--%>
+<%--    </form>--%>
+<%--    <form action="/upload" method="post" enctype="multipart/form-data">--%>
+<%--        <input type="text" name="description" />--%>
+<%--        <input type="file" name="file" />--%>
+<%--        <input type="submit" />--%>
+<%--    </form>--%>
 </section>
 
 </body>
